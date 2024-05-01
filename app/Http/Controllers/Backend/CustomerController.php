@@ -32,6 +32,7 @@ class CustomerController extends Controller
     {
            $customer = new Customer;
            $customer->title = $request->title;
+           $customer->customer_type = 'Customer';
            $customer->first_name = $request->first_name;
            $customer->middle_name = $request->middle_name;
            $customer->last_name = $request->last_name;

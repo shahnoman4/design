@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use DataTables;
 use Auth;
 use Illuminate\Support\Facades\File;
@@ -42,6 +43,7 @@ class TransactionController extends Controller
         $data['transaction'] = TransactionDetail::all();
         $data['paymentMethod'] = PaymentMethod::all();
         $data['expense'] = Accounts::where('accout_type','Expense')->get();
+        $data['categories'] = Category::get();
         $data['income'] = Accounts::where('accout_type','Income')->get();
         $data['supplier'] = Customer::where('customer_type','Supplier')->get();
         return view('backend.pages.transactionDetail.estimate', compact('data'));

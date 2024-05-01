@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('inclusive_of_vat');
             $table->string('vat');
             $table->string('purchasing_information');
-            $table->integer('purchasing_information_id');
+            $table->integer('purchasing_information_id')->nullable();
             $table->string('image');
             $table->timestamps();
         });

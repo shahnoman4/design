@@ -51,8 +51,9 @@
                 <label>Category</label>
                     <select class="form-control" id="edit_category_id" required="required" name="category_id">
                       <option>Choose Category</option>
-                      <option>Design</option>
-                      <option>Development</option>
+                      @foreach ($data['categories'] as $category)
+                        <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                      @endforeach
                     </select>
                     <span class="text-red">
                       <strong class="category_id" style="color:red;"></strong>
